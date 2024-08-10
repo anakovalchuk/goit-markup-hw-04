@@ -219,6 +219,17 @@ p {
     flex-direction: column;
 }
 
+.about-us-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
+}
+
 .about-us-subtitle {
     font-weight: 500;
     font-size: 20px;    
@@ -234,16 +245,6 @@ p {
     letter-spacing: 0.02em;
 }
 
-.about-us-icon {
-    border: 1px solid #8e8f99;
-    border-radius: 4px;
-    min-width: 264px;
-    min-height: 112px;
-    background: #f4f4fd;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    margin-bottom: 8px;
-}
 .team {
     background: #f4f4fd;
     padding-top: 120px;
@@ -460,7 +461,7 @@ p {
   .footer-social-links-list {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
   }
 
   .footer-social-links-list .social-links:hover,
@@ -468,5 +469,7 @@ p {
     background-color: #31d0aa;
   }
    
-
+.social-links-item {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
    
