@@ -46,6 +46,7 @@ p {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -92,6 +93,25 @@ p {
     color: #2e2f42;
     padding: 24px 0;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-psevdo {
+    position: relative;
+}
+
+.nav-link-psevdo::after {
+    content:  '';
+    dispaly: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: #404bbf;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    bottom: -1px;
+
 }
 
 .nav-link:hover,
@@ -111,6 +131,7 @@ p {
     color: #434455;
     padding: 24px 0;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
@@ -119,8 +140,11 @@ p {
 }
 
 .hero {
-    background: #2e2f42;
+    background-color: #2e2f42;
     padding: 188px 0;
+    background: rgba(46, 47, 66, 0.7);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    background-repeat: no-repeat;
 }
 
 .hero-title {
@@ -155,7 +179,8 @@ p {
     padding: 16px 32px;
     border-radius: 4px;
     margin: 0 auto;   
-    border: none; 
+    border: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -209,6 +234,16 @@ p {
     letter-spacing: 0.02em;
 }
 
+.about-us-icon {
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    min-width: 264px;
+    min-height: 112px;
+    background: #f4f4fd;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+}
 .team {
     background: #f4f4fd;
     padding-top: 120px;
@@ -240,11 +275,14 @@ p {
     gap: 24px;
 }
 
+.team-item:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
 .team-item {
     background-color: #fff;
     width: calc((100% - 72px)/4);
     border-radius: 0px 0px 4px 4px; 
-
 }
 
 .team-subtitle {
@@ -262,6 +300,32 @@ p {
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
+    margin-bottom: 8px;
+}
+.social-links-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.social-links {
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links:hover,
+.social-links:focus {
+    background-color: #404bbf;
 }
 
 .portfolio {
@@ -302,10 +366,6 @@ p {
     column-gap: 24px;
 }
 
-.portfolio-item {
-
-}
-
 .portfolio-subtitle {
     font-weight: 500;
     font-size: 20px;
@@ -319,6 +379,41 @@ p {
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);cursor: pointer;
+
+}
+.portfolio-item:hover .thumb-descr {
+    transform: translatey(0);
+}
+
+.thumb {
+    position: relative;
+    overflow: hidden;
+    width: 360px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.thumb-descr {
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translatey(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 40px;
 }
 
 .footer {
@@ -336,7 +431,6 @@ p {
 }
 
  .footer-logo {
-    display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
@@ -344,4 +438,35 @@ p {
     display: inline-block;
 }
 
+.footer-descr-social {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px; 
+    justify-content: flex-start;
+    align-items: center;
+   }
 
+   .footer .container { 
+    display: flex;
+  }
+
+  .container-logo {
+    margin-right: 120px;
+  }
+
+  .footer-social-links-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .footer-social-links-list .social-links:hover,
+  .footer-social-links-list .social-links:focus {
+    background-color: #31d0aa;
+  }
+   
+
+   
